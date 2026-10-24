@@ -164,4 +164,4 @@ Proyek ini dibuat untuk keperluan akademik dan analisis internal kelompok. Selur
 
 ## Tim Pengembang
 
-* **Raja Jamsut & Tim** - Pengembangan Dashboard, Integrasi WebGL, Analisis Data, dan Pengolahan Visualisasi.
+* **Tim Learning Machine** - Pengembangan Dashboard, Integrasi WebGL, Analisis Data, dan Pengolahan Visualisasi.
