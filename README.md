@@ -60,8 +60,8 @@ Sebelum menjalankan aplikasi di lingkungan lokal, pastikan perangkat kamu telah 
 
 1. **Kloning Repositori:**
    ```bash
-   git clone https://github.com/rajajamsut/ecommerce-dashboard.git
-   cd ecommerce-dashboard
+   git clone https://github.com/narace070603/indonesia-ecommerce-data-analysis.git
+   cd indonesia-ecommerce-data-analysis
    ```
 
 2. **Pasang Dependensi Python:**
