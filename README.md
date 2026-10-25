@@ -27,8 +27,8 @@ Analisis dilakukan menggunakan Python dengan bantuan Pandas untuk pengolahan dat
 Dataset yang digunakan adalah **Indonesia E-commerce Sales Challenging**, yang berisi informasi mengenai transaksi penjualan e-commerce di Indonesia.
 
 - **Nama dataset:** Indonesia E-commerce Sales Challenging
-- **Sumber:** [belum diisi]
-- **Link:** [belum diisi]
+- **Sumber:** Kaggle 
+- **Link:** https://www.kaggle.com/datasets/zkyfauzi/indonesia-ecommerce-sales 
 - **Format:** CSV
 - **Jumlah data awal:** 18.868 baris dan 19 kolom
 
