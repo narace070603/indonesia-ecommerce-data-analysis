@@ -33,7 +33,7 @@ Analisis dilakukan menggunakan Python dengan bantuan Pandas untuk pengolahan dat
 ## Tautan Demo Live
 
 Aplikasi ini telah dideploy dan dapat diakses langsung secara publik melalui tautan berikut:
-* **Streamlit Cloud:** https://share.streamlit.io
+* **Streamlit Cloud:** [https://share.streamlit.io](https://indonesia-ecommerce-data-analysis-ogdit6abxol6rjbyuejpcn.streamlit.app)
 
 ---
 
