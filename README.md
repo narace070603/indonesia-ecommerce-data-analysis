@@ -6,7 +6,7 @@
 ![Three.js](https://img.shields.io/badge/Three.js-WebGL-000000?style=for-the-badge&logo=three.js&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active_Development-brightgreen?style=for-the-badge)
 
-Aplikasi web interaktif untuk menganalisis performa data penjualan e-commerce di Indonesia secara komprehensif. Aplikasi ini mengabungkan hasil pemrosesan analitis bisnis dengan pengalaman visual modern melalui integrasi komponen kustom berbasis React WebGL (Mode Cihuy).
+Aplikasi web interaktif untuk menganalisis performa data penjualan e-commerce di Indonesia secara komprehensif. Aplikasi ini menggabungkan hasil pemrosesan analitis bisnis dengan pengalaman visual modern melalui integrasi komponen kustom berbasis React WebGL (Mode Cihuy).
 
 ---
 
@@ -178,24 +178,33 @@ Sebelum menjalankan aplikasi di lingkungan lokal, pastikan perangkat kamu telah 
    ```bash
    git clone [https://github.com/narace070603/indonesia-ecommerce-data-analysis.git](https://github.com/narace070603/indonesia-ecommerce-data-analysis.git)
    cd indonesia-ecommerce-data-analysis
-Pasang Dependensi Python:
-Jalankan perintah berikut di terminal:
+   ```
 
-Bash
-pip install -r requirement.txt
-(Catatan: Kamu tidak perlu menginstal Node.js atau mengeksekusi paket npm, karena bundel komponen kustom React di folder microslats_component/build sudah dikompilasi secara permanen di dalam repositori ini).
+2. **Pasang Dependensi Python:**
+   Jalankan perintah berikut di terminal:
+   ```bash
+   pip install -r requirement.txt
+   ```
 
-Cara Menjalankan Proyek
+*(Catatan: Kamu tidak perlu menginstal Node.js atau mengeksekusi paket npm, karena bundel komponen kustom React di folder `microslats_component/build` sudah dikompilasi secara permanen di dalam repositori ini).*
+
+---
+
+## Cara Menjalankan Proyek
+
 Untuk menjalankan dashboard di komputer lokal kamu, gunakan perintah berikut di terminal:
 
-Bash
+```bash
 python -m streamlit run app.py
-Setelah perintah dijalankan, peramban web akan terbuka secara otomatis di alamat http://localhost:8501.
+```
 
-Fitur Mode Tampilan
-Buka menu navigasi di bagian kiri (sidebar).
+Setelah perintah dijalankan, peramban web akan terbuka secara otomatis di alamat `http://localhost:8501`.
 
-Pilih mode antarmuka: Normal untuk tampilan standar analitis, atau Mode Cihuy untuk mengaktifkan pengalaman latar belakang animasi 3D WebGL.
+### Fitur Mode Tampilan
+1. Buka menu navigasi di bagian kiri (*sidebar*).
+2. Pilih mode antarmuka: **Normal** untuk tampilan standar analitis, atau **Mode Cihuy** untuk mengaktifkan pengalaman latar belakang animasi 3D WebGL.
+
+---
 
 ## Struktur Folder
 
@@ -240,27 +249,37 @@ indonesia-ecommerce-data-analysis/
 ├── README.md                    # Berkas dokumentasi utama proyek
 └── requirement.txt              # Daftar pustaka Python yang dibutuhkan
 ```
-Panduan Kontribusi
+
+---
+
+## Panduan Kontribusi
+
 Kontribusi dari anggota tim sangat dialu-alukan. Untuk membuat Pull Request:
 
-Buat cabang (branch) baru dari main:
+1. Buat cabang (*branch*) baru dari `main`:
+   ```bash
+   git checkout -b fitur-baru-kamu
+   ```
+2. Lakukan perubahan kode dan buat commit yang jelas:
+   ```bash
+   git commit -m "feat: tambahkan fitur visualisasi baru"
+   ```
+3. Unggah perubahan ke repositori:
+   ```bash
+   git push origin fitur-baru-kamu
+   ```
+4. Kirimkan *Pull Request* (PR) ke cabang `main` di repositori GitHub kelompok.
 
-Bash
-git checkout -b fitur-baru-kamu
-Lakukan perubahan kode dan buat commit yang jelas:
+---
 
-Bash
-git commit -m "feat: tambahkan fitur visualisasi baru"
-Unggah perubahan ke repositori:
+## Lisensi
 
-Bash
-git push origin fitur-baru-kamu
-Kirimkan Pull Request (PR) ke cabang main di repositori GitHub kelompok.
-
-Lisensi
 Proyek ini dibuat untuk keperluan akademik dan analisis internal kelompok. Seluruh hak cipta penggunaan kode disesuaikan dengan ketentuan tim pengembang.
 
-Penutup
+---
+
+## Penutup
+
 Proyek ini menerapkan proses analisis data menggunakan Python, mulai dari memahami dan membersihkan dataset, melakukan eksplorasi data, membuat visualisasi, menyusun insight dan rekomendasi, hingga membangun dashboard interaktif berbasis Streamlit serta mendokumentasikan hasil analisis secara rapi.
 
 Melalui proyek ini, diharapkan pola penjualan e-commerce dapat dipahami berdasarkan kategori produk, tren bulanan, dan wilayah transaksi. Hasil analisis dapat menjadi gambaran awal untuk mendukung evaluasi dan pengambilan keputusan bisnis berbasis data.
