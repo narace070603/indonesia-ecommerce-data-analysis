@@ -1,4 +1,4 @@
-# E-Commerce Performance Dashboard & Interactive Analytics
+# Indonesia E-Commerce Sales Analysis & Interactive Dashboard
 
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.66.1-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -6,7 +6,7 @@
 ![Three.js](https://img.shields.io/badge/Three.js-WebGL-000000?style=for-the-badge&logo=three.js&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active_Development-brightgreen?style=for-the-badge)
 
-Aplikasi web interaktif untuk menganalisis performa data penjualan e-commerce secara komprehensif. Aplikasi ini menggabungkan visualisasi data analitis dengan pengalaman visual modern melalui integrasi komponen khusus berbasis React WebGL (Mode Cihuy).
+Aplikasi web interaktif untuk menganalisis performa data penjualan e-commerce di Indonesia secara komprehensif. Proyek ini menyajikan temuan analitis bisnis utama, visualisasi tren transaksi, serta integrasi komponen khusus berbasis React WebGL (Mode Cihuy) untuk memberikan pengalaman visual modern.
 
 ---
 
@@ -19,8 +19,11 @@ Aplikasi ini telah dideploy dan dapat diakses langsung secara publik melalui tau
 
 ## Daftar Isi
 
-* [Fitur Utama](#fitur-utama)
-* [Tumpukan Teknologi](#tumpukan-teknologi)
+* [Gambaran Umum Dataset](#gambaran-umum-dataset)
+* [Pertanyaan Bisnis & Hasil Analisis](#pertanyaan-bisnis--hasil-analisis)
+* [Fitur Dashboard](#fitur-dashboard)
+* [Tumpukan Teknologi & Alat](#tumpukan-teknologi--alat)
+* [Tahapan Analisis Data](#tahapan-analisis-data)
 * [Panduan Instalasi & Persiapan](#panduan-instalasi--persiapan)
 * [Cara Penggunaan](#cara-penggunaan)
 * [Struktur Folder](#struktur-folder)
@@ -30,29 +33,81 @@ Aplikasi ini telah dideploy dan dapat diakses langsung secara publik melalui tau
 
 ---
 
-## Fitur Utama
+## Gambaran Umum Dataset
 
-1. **Analisis Transaksi Interaktif:** Menampilkan metrik utama penjualan, pendapatan, tren waktu, dan distribusi wilayah menggunakan grafik Plotly yang responsif.
-2. **Kustomisasi Tampilan (Mode Cihuy):** Fitur latar belakang animasi 3D/WebGL buatan kustom yang dibangun dengan React dan Micro Slats, dapat diaktifkan atau dimatikan secara fleksibel melalui sidebar.
-3. **Filter Data Dinamis:** Memungkinkan pengguna menyaring data berdasarkan rentang tanggal, kategori produk, dan wilayah penjualan secara real-time.
-4. **Pembersihan Data Otomatis:** Sistem membaca data dari alur pemrosesan yang telah dibersihkan secara konsisten untuk memastikan akurasi visualisasi.
+Dataset yang digunakan dalam analisis ini adalah **Indonesia E-commerce Sales Challenging**, yang berisi data transaksi penjualan e-commerce di Indonesia.
+
+* **Nama Dataset:** Indonesia E-commerce Sales Challenging
+* **Sumber:** Kaggle
+* **Link Dataset:** [Kaggle - Indonesia E-Commerce Sales](https://www.kaggle.com/datasets/zkyfauzi/indonesia-ecommerce-sales)
+* **Format File:** CSV
+* **Jumlah Data Awal:** 18.868 baris dan 19 kolom
+
+### Kolom Utama yang Digunakan
+* `product_categories`: Kategori produk yang dibeli.
+* `total_pembayaran`: Total pembayaran transaksi.
+* `status_pesanan`: Status pesanan transaksi.
+* `total_qty`: Jumlah produk yang dibeli.
+* `kota_kabupaten`: Wilayah lokasi transaksi.
+* `order_date`: Tanggal terjadinya transaksi.
+* `order_id`: Identitas unik transaksi.
 
 ---
 
-## Tumpukan Teknologi
+## Pertanyaan Bisnis & Hasil Analisis
 
-* **Bahasa Pemrograman Utama:** Python 3.x
+### Visualisasi 1: Kategori Produk dengan Pendapatan Tertinggi
+* **Hasil:** Kategori **Seal / Baut / Roof** menghasilkan pendapatan tertinggi berdasarkan analisis transaksi yang hanya memiliki satu kategori produk.
+* **Insight:** Pembatasan analisis pada transaksi satu kategori dilakukan agar nilai pembayaran transaksi yang memiliki beberapa kategori tidak dihitung secara berulang.
+* **Rekomendasi:** Kategori ini perlu diprioritaskan dalam perencanaan stok dan strategi penjualan dengan tetap memperhatikan tren permintaan pelanggan.
+
+### Visualisasi 2: Tren Penjualan Bulanan Tahun 2024
+* **Hasil:** Evaluasi dilakukan terhadap transaksi berstatus *selesai* dari Januari hingga November 2024 untuk melihat dinamika penjualan setiap bulan.
+* **Insight:** Grafik tren bulanan membantu mengamati naik-turunnya volume dan nilai penjualan secara historis selama periode Januari–November 2024.
+* **Rekomendasi:** Informasi tren dapat dimanfaatkan untuk evaluasi kinerja bulanan dan membantu efisiensi perencanaan persediaan gudang. *(Catatan: Data belum mencakup bulan Desember 2024)*.
+
+### Visualisasi 3: Kategori Produk Terpopuler di Kabupaten Bogor
+* **Pertanyaan Bisnis:** Kategori produk apa yang paling banyak dibeli di Kabupaten Bogor?
+* **Hasil:** Kategori **Celengan** menjadi produk terpopuler di Kabupaten Bogor dengan mencatatkan **350 transaksi unik**.
+* **Insight:** Celengan merupakan kategori produk dengan jumlah transaksi unik tertinggi di wilayah Kabupaten Bogor.
+* **Rekomendasi:** Penjual dapat memanfaatkan temuan ini untuk mengevaluasi promosi wilayah dan menjaga ketersediaan stok produk Celengan khusus di area Kabupaten Bogor.
+
+---
+
+## Fitur Dashboard
+
+1. **Visualisasi Data Interaktif:** Menyajikan metrik pendapatan, tren penjualan bulanan, dan produk populer menggunakan grafik Plotly yang dinamis.
+2. **Kustomisasi Tampilan (Mode Cihuy):** Fitur latar belakang animasi 3D WebGL buatan kustom (React + Micro Slats) yang dapat diaktifkan atau dimatikan via sidebar.
+3. **Filter Data Dinamis:** Memungkinkan pengguna menyaring data berdasarkan rentang tanggal, kategori produk, dan wilayah penjualan secara real-time.
+4. **Pembersihan Data Otomatis:** Dashboard membaca data hasil pembersihan secara konsisten untuk menjamin akurasi informasi yang ditampilkan.
+
+---
+
+## Tumpukan Teknologi & Alat
+
+* **Bahasa Pemrograman:** Python 3.x
+* **Pengolahan & Analisis Data:** Pandas, NumPy
+* **Visualisasi Data:** Plotly Express, Matplotlib
 * **Kerangka Kerja Dashboard:** Streamlit
-* **Visualisasi Data:** Plotly Express, Pandas, NumPy
 * **Komponen Antarmuka Kustom:** React, Tailwind CSS, Three.js / WebGL (Micro Slats)
+* **Lingkungan Pengembangan:** Jupyter Notebook, Visual Studio Code
 * **Manajemen Kode & Deployment:** Git, GitHub, Streamlit Community Cloud
+
+---
+
+## Tahapan Analisis Data
+
+1. **Data Understanding:** Memahami struktur dataset, ketersediaan baris dan kolom, tipe data, deteksi nilai kosong (*missing values*), data duplikat, serta gambaran awal transaksi.
+2. **Data Cleaning & EDA:** Melakukan penanganan *missing values*, penghapusan duplikasi, perbaikan tipe data, serta filtering transaksi valid untuk eksplorasi distribusi kategori dan wilayah.
+3. **Visualisasi & Analisis Insight:** Menyusun visualisasi dan menarik kesimpulan bisnis untuk menjawab pertanyaan seputar pendapatan, tren bulanan, dan potensi pasar regional.
+4. **Pengembangan Dashboard:** Membangun antarmuka web interaktif menggunakan Streamlit agar hasil analisis mudah dipahami oleh pemangku kepentingan.
 
 ---
 
 ## Panduan Instalasi & Persiapan
 
 ### Prasyarat
-Sebelum menjalankan aplikasi di lingkungan lokal, pastikan perangkat kamu telah terpasang:
+Pastikan perangkat kamu sudah terpasang:
 * Python versi 3.10 atau yang lebih baru
 * Git
 
@@ -60,42 +115,32 @@ Sebelum menjalankan aplikasi di lingkungan lokal, pastikan perangkat kamu telah 
 
 1. **Kloning Repositori:**
    ```bash
-   git clone https://github.com/narace070603/indonesia-ecommerce-data-analysis.git
+   git clone [https://github.com/narace070603/indonesia-ecommerce-data-analysis.git](https://github.com/narace070603/indonesia-ecommerce-data-analysis.git)
    cd indonesia-ecommerce-data-analysis
-   ```
+Pasang Dependensi Python:
+Jalankan perintah berikut di terminal:
 
-2. **Pasang Dependensi Python:**
-   Jalankan perintah berikut untuk menginstal seluruh pustaka yang dibutuhkan:
-   ```bash
-   pip install -r requirement.txt
-   ```
+Bash
+pip install -r requirement.txt
+(Catatan: Kamu tidak perlu menginstal Node.js atau mengeksekusi perintah npm, karena bundel komponen kustom React pada folder microslats_component/build sudah dikompilasi secara permanen di dalam repositori ini).
 
-*(Catatan: Kamu tidak perlu menginstal Node.js atau mengeksekusi paket npm, karena bundel komponen kustom React di folder `microslats_component/build` sudah dikompilasi secara permanen di dalam repositori ini).*
+Cara Penggunaan
+Jalankan perintah berikut di terminal komputer kamu:
 
----
-
-## Cara Penggunaan
-
-Untuk menjalankan dashboard di komputer lokal kamu, gunakan perintah berikut di terminal:
-
-```bash
+Bash
 python -m streamlit run app.py
-```
+Peramban web akan otomatis terbuka di alamat http://localhost:8501.
 
-Setelah perintah dijalankan, peramban web akan terbuka secara otomatis di alamat `http://localhost:8501`.
+Fitur Mode Tampilan
+Buka menu navigasi di sisi kiri (sidebar).
 
-### Fitur Mode Tampilan
-1. Buka menu navigasi di bagian kiri (sidebar).
-2. Pilih mode antarmuka: **Normal** untuk tampilan standar analitis, atau **Mode Cihuy** untuk mengaktifkan pengalaman latar belakang animasi 3D WebGL.
+Pilih mode antarmuka: Normal untuk tampilan analitis standar, atau Mode Cihuy untuk mengaktifkan pengalaman latar belakang animasi 3D WebGL.
 
----
+Struktur Folder
+Berikut susunan direktori resmi dari repositori ini:
 
-## Struktur Folder
-
-Berikut adalah gambaran susunan direktori resmi proyek ini berdasarkan repositori:
-
-```text
-indonesia-ecommerce-data-dashboard/
+Plaintext
+indonesia-ecommerce-data-analysis/
 ├── .devcontainer/
 │   └── devcontainer.json        # Konfigurasi lingkungan pengembangan
 ├── assets/                      # Berkas gambar dan materi visual dashboard
@@ -130,38 +175,28 @@ indonesia-ecommerce-data-dashboard/
 │   ├── config.toml
 │   └── TechText.css
 ├── app.py                       # Berkas utama aplikasi Streamlit
-└── README.md             
-└── requirement.tx               # Daftar pustaka Python yang dibutuhkan
-```
+└── README.md
+└── requirement.txt              # Daftar pustaka Python yang dibutuhkan
 
----
+Panduan Kontribusi
+Kontribusi dari anggota tim sangat dialu-alukan. Untuk mengirimkan fitur baru:
 
-## Panduan Kontribusi
+Buat branch baru dari main:
 
-Kontribusi dari anggota tim atau pengembang luar sangat dialu-alukan. Untuk berkontribusi:
+Bash
+git checkout -b fitur-dashboard
+Simpan dan buat commit atas perubahan kode:
 
-1. Buat fork dari repositori ini atau buat cabang (branch) baru dari `main`:
-   ```bash
-   git checkout -b fitur-baru-kamu
-   ```
-2. Lakukan perubahan kode dan buat commit yang jelas:
-   ```bash
-   git commit -m "feat: menambahkan visualisasi distribusi wilayah"
-   ```
-3. Unggah perubahan ke repositori:
-   ```bash
-   git push origin fitur-baru-kamu
-   ```
-4. Kirimkan Pull Request (PR) ke cabang `main` untuk direview bersama.
+Bash
+git commit -m "feat: add dashboard layout, WebGL mode, and updated README"
+Unggah branch ke repositori:
 
----
+Bash
+git push origin fitur-dashboard
+Buka halaman GitHub repositori kelompok dan buat Pull Request (PR) ke branch main.
 
-## Lisensi
-
+Lisensi
 Proyek ini dibuat untuk keperluan akademik dan analisis internal kelompok. Seluruh hak cipta penggunaan kode disesuaikan dengan ketentuan tim pengembang.
 
----
-
-## Tim Pengembang
-
-* **Tim Learning Machine** - Pengembangan Dashboard, Integrasi WebGL, Analisis Data, dan Pengolahan Visualisasi.
+Tim Pengembang
+Kelompok Analisis Data E-Commerce - Pemrosesan Data, Visualisasi Analisis, Pengembangan Dashboard Streamlit, dan Integrasi Komponen WebGL.
